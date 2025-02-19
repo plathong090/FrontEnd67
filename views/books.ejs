@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Books</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <h1>View Books</h1>
+  <table class="book-table">
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+    </tr>
+    <% books.forEach(function(book) { %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+        <td>
+          <div class="link-center">
+            <a href="/books/ <%= book.id %>">View</a>
+            <a href="/update/<%= book.id %>">Edit</a>
+            <a href="/delete/<%= book.id %>">Delete</a>
+            <a href="/">Back to List</a>
+          </div>
+        </td>
+      </tr>
+      
+    <% }); %>
+  </table>
+  <div class="link-center">
+    <a href="/">Back to List</a>
+  </div>
+</body>
+
+</html>
